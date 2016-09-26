@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Globalization;
 namespace _09_Portfolio
 {
-    internal class Stock
+    public class Stock : IAsset
     {
         public Stock()
         {
@@ -54,13 +54,18 @@ namespace _09_Portfolio
         {
             return NumShares * PricePerShare; 
         }
-        public static double TotalValue(Stock[] stocks)
+        public static double TotalValue(IAsset[] stocks)
         {
-            return stocks[0].GetValue() + stocks[1].GetValue();
+            double sum = 0;
+            for (int i = 0; i < stocks.Length; i++)
+            {
+                sum = sum + stocks[i].GetValue();
+            }
+            return sum;
         }
         public override string ToString()
         {
-            return "Stock[symbol="+ Symbol +",pricePerShare="+ PricePerShare +",numShares="+ NumShares +"]";
+            return "Stock[symbol=" + Symbol +",pricePerShare="+ PricePerShare +",numShares="+ NumShares +"]";
         }
         public bool Equals(Stock SameCheck)
         {
