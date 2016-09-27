@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 
-/*namespace _09_Portfolio
+namespace _09_Portfolio
 {
     //Now things are getting trickier. Be sure to follow along in the index.html file, to see the purpose of the different tests
     //we will be creating here.
@@ -21,7 +21,7 @@ using System.Collections.Generic;
         [TestMethod]
         public void PortfolioCanUseConstructor()
         {
-            List<Asset> stocks = new List<Asset>();
+            List<IAsset> stocks = new List<IAsset>();
             stocks.Add(stockHP);
             stocks.Add(stockIBM);
             Portfolio portfolio = new Portfolio(stocks);
@@ -40,4 +40,4 @@ using System.Collections.Generic;
 
        
     }
-}*/
+}
